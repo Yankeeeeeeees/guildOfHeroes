@@ -34,6 +34,26 @@ class Program
         Console.WriteLine($"Опыт Ярослава: {yaroslav.Experience}");
 
 
+        bool yaroslavAlive = yaroslav.IsAlive();
+        Console.WriteLine($"Ярослав жив: {yaroslavAlive}");
+        Console.WriteLine($"Артём жив: {artem.IsAlive()}");
+
+        if (yaroslavAlive) {
+            Console.WriteLine("Ярослав может продолжать приключение.");
+        } else {
+            Console.WriteLine("Ярослав больше не может сражаться.");
+        }
+        Console.WriteLine();
+        // string info = yaroslav.GetInfo();
+        Console.WriteLine("Строка получена. Сейчас выведем её:");
+        // Console.WriteLine(info);
+
+        Console.WriteLine();
+        // Console.WriteLine(anastasia.GetInfo());
+        Console.WriteLine();
+        // Console.WriteLine(artem.GetInfo());
+
+
         Console.WriteLine(">>> Герой 1 <<<");
         Console.WriteLine($"Имя: {yaroslav.Name}");
         Console.WriteLine($"Здоровье: {yaroslav.Health}");
@@ -57,37 +77,46 @@ class Program
         Console.WriteLine($"Опыт: {artem.Experience}");
 
 
-        // Computer gaming = new Computer ("ATX", "RTX 5090", "i5 14600kf", 64, "800wt");
-        // Computer server = new Computer ("ATX", "RTX 6000", "Threadripper pro 9995wx", 256, "2000wt");
-        // Computer office = new Computer ("Mini ATX", "RX 580", "i5 10400f", 16, "550wt");
+        Computer gaming = new Computer ("Игровой", "ATX", "RTX 5090", "i5 14600kf", 64, "800wt", 240000);
+        Computer server = new Computer ("Серверный", "ATX", "RTX 6000", "Threadripper pro 9995wx", 256, "2000wt", 630000);
+        Computer office = new Computer ("Оффисный", "Mini ATX", "RX 580", "i5 10400f", 16, "550wt", 56000);
 
-        // Console.WriteLine ("Каталог компьютеров");
+        Console.WriteLine (">>> КАТАЛОГ КОМПЬЮТЕРОВ <<<");
 
-        // Console.WriteLine("Компьютер 1: ");
-        // Console.WriteLine($"Корпус: {gaming.Case}");
-        // Console.WriteLine($"Видеокарта: {gaming.GPU}");
-        // Console.WriteLine($"Процессор: {gaming.CPU}");
-        // Console.WriteLine($"Количество ОЗУ: {gaming.RAM}");
-        // Console.WriteLine($"Блок питания: {gaming.BP}" );
+        Console.WriteLine($"Компьютер 1: {gaming.Whatis}");
+        Console.WriteLine($"Корпус: {gaming.Case}");
+        Console.WriteLine($"Видеокарта: {gaming.GPU}");
+        Console.WriteLine($"Процессор: {gaming.CPU}");
+        Console.WriteLine($"Количество ОЗУ: {gaming.RAM}");
+        Console.WriteLine($"Блок питания: {gaming.BP}" );
 
-        // Console.WriteLine("");
+        Console.WriteLine("");
 
-        // Console.WriteLine("Компьютер 2: ");
-        // Console.WriteLine($"Корпус: {server.Case}");
-        // Console.WriteLine($"Видеокарта: {server.GPU}");
-        // Console.WriteLine($"Процессор: {server.CPU}");
-        // Console.WriteLine($"Количество ОЗУ: {server.RAM}");
-        // Console.WriteLine($"Блок питания: {server.BP}" );
+        Console.WriteLine($"Компьютер 2: {server.Whatis}");
+        Console.WriteLine($"Корпус: {server.Case}");
+        Console.WriteLine($"Видеокарта: {server.GPU}");
+        Console.WriteLine($"Процессор: {server.CPU}");
+        Console.WriteLine($"Количество ОЗУ: {server.RAM}");
+        Console.WriteLine($"Блок питания: {server.BP}" );
 
-        // Console.WriteLine("");
+        Console.WriteLine("");
 
-        // Console.WriteLine("Компьютер 3: ");
-        // Console.WriteLine($"Корпус: {office.Case}");
-        // Console.WriteLine($"Видеокарта: {office.GPU}");
-        // Console.WriteLine($"Процессор: {office.CPU}");
-        // Console.WriteLine($"Количество ОЗУ: {office.RAM}");
-        // Console.WriteLine($"Блок питания: {office.BP}" );
+        Console.WriteLine($"Компьютер 3: {office.Whatis}");
+        Console.WriteLine($"Корпус: {office.Case}");
+        Console.WriteLine($"Видеокарта: {office.GPU}");
+        Console.WriteLine($"Процессор: {office.CPU}");
+        Console.WriteLine($"Количество ОЗУ: {office.RAM}");
+        Console.WriteLine($"Блок питания: {office.BP}" );
 
+        Console.WriteLine("");
+        Console.WriteLine(">>> ИЗМЕНЕНИЕ КОМПЛЕТКУЮЩИХ И ЦЕН <<<");
+        Console.WriteLine("");
+
+        Console.WriteLine($"Замена Блока питания для компьютера {gaming.Whatis}: {gaming.BP} -> 1200wt, {gaming.Cost} -> 245000");
+        gaming.Cost = 245000;
+        gaming.BP = "1200wt";
+
+        Console.WriteLine("");
 
     }
 }
